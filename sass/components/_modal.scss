@@ -74,10 +74,6 @@
     &:focus {
         border-color: var(--blue-color);
     }
-
-    &:focus .modal__icon {
-        fill: var(--blue-color);
-    }
 }
 
 .modal__icon {
@@ -88,6 +84,10 @@
     margin-left: 12px;
 
     transition: fill var(--time) var(--function);
+
+    .modal__input:focus + & {
+        fill: var(--blue-color);
+    }
 }
 
 .modal__icon--shadow {
@@ -141,10 +141,8 @@
     height: 15px;
     border: 2px solid var(--main-color);
     border-radius: 4px;
-}
 
-.tick__input {
-    &:checked .tick__box--disable {
+    .tick__input:checked + & {
         background-image: url('../images/check.svg');
         background-color: var(--blue-color);
         background-size: contain;

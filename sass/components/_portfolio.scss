@@ -3,7 +3,7 @@
 .portfolio__list {
     display: flex;
     flex-wrap: wrap;
-    box-sizing: calc (100% / 3 - 30px);
+    box-sizing: calc (1200px / 3 - 30px);
     margin-left: calc(-1 * var(--small-size));
     margin-top: calc(-1 * var(--small-size));
     margin-bottom: var(--big-size);
@@ -19,13 +19,6 @@
     &:focus {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
             0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-        outline: none;
-    }
-
-    &:hover .portfolio__desk,
-    &:focus .portfolio__desk {
-        transform: translateY(0);
-        opacity: 1;
         outline: none;
     }
 }
@@ -76,4 +69,11 @@
 
     transition: transform var(--time) var(--function),
         opacity var(--time) var(--function);
+
+    .portfolio__item:hover &,
+    .portfolio__item:focus & {
+        transform: translateY(0);
+        opacity: 1;
+        outline: none;
+    }
 }
